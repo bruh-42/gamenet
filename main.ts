@@ -26,14 +26,10 @@ input.onButtonPressed(Button.B, function () {
     led.plot(0, 2)
     basic.pause(500)
 })
-led.plot(2, 2)
-basic.pause(500)
-led.unplot(2, 2)
-led.plot(3, 2)
-basic.pause(500)
-led.unplot(3, 2)
-led.plot(4, 2)
-basic.pause(500)
 basic.forever(function () {
-	
+    let sprite: game.LedSprite = null
+    if (sprite.isTouchingEdge() == true) {
+        sprite.delete()
+        basic.showString("GAME OVER")
+    }
 })
