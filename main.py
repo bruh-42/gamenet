@@ -1,4 +1,4 @@
-input.onButtonPressed(Button.A, function () {
+def on_button_pressed_a():
     sprite.change(LedSpriteProperty.X, 1)
     basic.pause(500)
     sprite.change(LedSpriteProperty.X, 1)
@@ -6,17 +6,18 @@ input.onButtonPressed(Button.A, function () {
     sprite.change(LedSpriteProperty.X, 1)
     basic.pause(500)
     sprite.change(LedSpriteProperty.X, 1)
-})
-input.onButtonPressed(Button.AB, function () {
-    sprite = game.createSprite(2, 2)
+input.on_button_pressed(Button.A, on_button_pressed_a)
+
+def on_button_pressed_ab():
+    global sprite
+    sprite = game.create_sprite(2, 2)
     basic.pause(500)
     sprite.change(LedSpriteProperty.X, 1)
     basic.pause(500)
     sprite.change(LedSpriteProperty.X, 1)
-    basic.pause(10000)
-    bean = game.createSprite(2, 3)
-})
-input.onButtonPressed(Button.B, function () {
+input.on_button_pressed(Button.AB, on_button_pressed_ab)
+
+def on_button_pressed_b():
     sprite.change(LedSpriteProperty.X, -1)
     basic.pause(500)
     sprite.change(LedSpriteProperty.X, -1)
@@ -24,7 +25,7 @@ input.onButtonPressed(Button.B, function () {
     sprite.change(LedSpriteProperty.X, -1)
     basic.pause(500)
     sprite.change(LedSpriteProperty.X, -1)
-})
-let bean: game.LedSprite = null
-let sprite: game.LedSprite = null
-music.playMelody("C5 A E G C E B G ", 57776757523232340)
+input.on_button_pressed(Button.B, on_button_pressed_b)
+
+sprite: game.LedSprite = None
+music.play_melody("C5 A E G C E B G ", 57776757523232332)
